@@ -12,7 +12,7 @@ export const importTranslation = require.context(
   "lazy"
 );
 
-const moduleName = "@openmrs/esm-dispensing-app";
+const moduleName = "@kenyaemr/esm-dispensing-app";
 
 const options = {
   featureName: "dispensing",
