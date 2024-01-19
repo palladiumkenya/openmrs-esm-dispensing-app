@@ -2633,6 +2633,60 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@kenyaemr/esm-dispensing-app@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@kenyaemr/esm-dispensing-app@workspace:."
+  dependencies:
+    "@carbon/react": 1.12.0
+    "@openmrs/esm-framework": next
+    "@swc/core": ^1.2.189
+    "@swc/jest": ^0.2.21
+    "@testing-library/dom": ^8.16.0
+    "@testing-library/jest-dom": ^5.16.4
+    "@testing-library/react": ^13.3.0
+    "@testing-library/user-event": ^14.2.1
+    "@types/jest": ^28.1.4
+    "@types/react": ^18.0.14
+    "@types/react-dom": ^18.0.5
+    "@types/react-router": ^5.1.14
+    "@types/react-router-dom": ^5.1.7
+    "@types/webpack-env": ^1.16.0
+    "@typescript-eslint/parser": ^4.26.0
+    concurrently: ^6.2.0
+    dayjs: 1.x
+    eslint: ^7.27.0
+    eslint-config-prettier: ^8.3.0
+    eslint-config-ts-react-important-stuff: ^3.0.0
+    eslint-plugin-prettier: ^3.4.0
+    eslint-plugin-unused-imports: ^2.0.0
+    husky: ^6.0.0
+    identity-obj-proxy: ^3.0.0
+    jest: ^28.1.2
+    jest-cli: ^28.1.2
+    jest-environment-jsdom: ^28.1.2
+    lodash-es: ^4.17.15
+    openmrs: next
+    prettier: ^2.3.0
+    pretty-quick: ^3.1.0
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    react-i18next: ^11.7.0
+    react-router-dom: ^6.3.0
+    rxjs: ^6.5.4
+    swr: ^2.2.4
+    typescript: ^4.3.2
+    webpack: ^5.88.0
+  peerDependencies:
+    "@openmrs/esm-framework": "*"
+    dayjs: 1.x
+    react: 18.x
+    react-dom: 18.x
+    react-i18next: 11.x
+    rxjs: 6.x
+    swr: 2.x
+  languageName: unknown
+  linkType: soft
+
 "@leichtgewicht/ip-codec@npm:^2.0.1":
   version: 2.0.4
   resolution: "@leichtgewicht/ip-codec@npm:2.0.4"
@@ -2825,60 +2879,6 @@ __metadata:
   checksum: 03ae3397d0e2d48ba1b23750f8809eab6b0dc6a4b0403cb7435cf998d6c85a08208b02c3cd3136587f6e6c06c52f3f6f52af1df005502278a11fd380b209c744
   languageName: node
   linkType: hard
-
-"@openmrs/esm-dispensing-app@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@openmrs/esm-dispensing-app@workspace:."
-  dependencies:
-    "@carbon/react": 1.12.0
-    "@openmrs/esm-framework": next
-    "@swc/core": ^1.2.189
-    "@swc/jest": ^0.2.21
-    "@testing-library/dom": ^8.16.0
-    "@testing-library/jest-dom": ^5.16.4
-    "@testing-library/react": ^13.3.0
-    "@testing-library/user-event": ^14.2.1
-    "@types/jest": ^28.1.4
-    "@types/react": ^18.0.14
-    "@types/react-dom": ^18.0.5
-    "@types/react-router": ^5.1.14
-    "@types/react-router-dom": ^5.1.7
-    "@types/webpack-env": ^1.16.0
-    "@typescript-eslint/parser": ^4.26.0
-    concurrently: ^6.2.0
-    dayjs: 1.x
-    eslint: ^7.27.0
-    eslint-config-prettier: ^8.3.0
-    eslint-config-ts-react-important-stuff: ^3.0.0
-    eslint-plugin-prettier: ^3.4.0
-    eslint-plugin-unused-imports: ^2.0.0
-    husky: ^6.0.0
-    identity-obj-proxy: ^3.0.0
-    jest: ^28.1.2
-    jest-cli: ^28.1.2
-    jest-environment-jsdom: ^28.1.2
-    lodash-es: ^4.17.15
-    openmrs: next
-    prettier: ^2.3.0
-    pretty-quick: ^3.1.0
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-i18next: ^11.7.0
-    react-router-dom: ^6.3.0
-    rxjs: ^6.5.4
-    swr: ^2.2.4
-    typescript: ^4.3.2
-    webpack: ^5.88.0
-  peerDependencies:
-    "@openmrs/esm-framework": "*"
-    dayjs: 1.x
-    react: 18.x
-    react-dom: 18.x
-    react-i18next: 11.x
-    rxjs: 6.x
-    swr: 2.x
-  languageName: unknown
-  linkType: soft
 
 "@openmrs/esm-dynamic-loading@npm:5.2.1-pre.1156":
   version: 5.2.1-pre.1156
