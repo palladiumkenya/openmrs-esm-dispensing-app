@@ -592,7 +592,6 @@ const MedicationDispenseReview: React.FC<MedicationDispenseReviewProps> = ({
 
       <ComboBox
         id="batchNumber"
-        disabled={!userCanModify || !allowEditing}
         light={isTablet}
         items={itemStockBatches}
         initialSelectedItem={itemStockBatches[0]}
