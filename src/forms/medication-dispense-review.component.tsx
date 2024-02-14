@@ -15,6 +15,7 @@ import {
   userHasAccess,
   formatDatetime,
   parseDate,
+  ExtensionSlot,
 } from "@openmrs/esm-framework";
 import { useTranslation } from "react-i18next";
 import {
@@ -602,6 +603,15 @@ const MedicationDispenseReview: React.FC<MedicationDispenseReviewProps> = ({
         }}
         required
       />
+      {config.showDispenseItemBatchSelection && (
+        <section>
+          <h3>From ExtensionSlot</h3>
+          <ExtensionSlot
+            state={{ dispenseItemUuid, setStockItem }}
+            name="dispensing_stock_item_batch_selection-slot"
+          />
+        </section>
+      )}
 
       <TextArea
         labelText={t("patientInstructions", "Patient instructions")}

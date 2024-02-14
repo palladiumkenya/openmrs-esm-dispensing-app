@@ -127,6 +127,12 @@ export const configSchema = {
       },
     },
   },
+  showDispenseItemBatchSelection: {
+    _type: Type.Boolean,
+    _description:
+      "Whether to show item batch selection and enable stock levels management functionality during dispense",
+    _default: true,
+  },
 };
 
 export type PharmacyConfig = {
@@ -168,4 +174,5 @@ export type PharmacyConfig = {
       uuid: string;
     };
   };
+  showDispenseItemBatchSelection: boolean;
 };
