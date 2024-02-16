@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@carbon/react";
+import { Button, InlineLoading } from "@carbon/react";
 import { useConfig, useSession } from "@openmrs/esm-framework";
 import styles from "./action-buttons.scss";
 import { useTranslation } from "react-i18next";
@@ -19,6 +19,7 @@ import DispenseForm from "../forms/dispense-form.component";
 import { initiateMedicationDispenseBody } from "../medication-dispense/medication-dispense.resource";
 import PauseDispenseForm from "../forms/pause-dispense-form.component";
 import CloseDispenseForm from "../forms/close-dispense-form.component";
+import { useBillStatus } from "../billing-resource/billing-resource";
 
 interface ActionButtonsProps {
   medicationRequestBundle: MedicationRequestBundle;
@@ -34,6 +35,10 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
   const { t } = useTranslation();
   const config = useConfig() as PharmacyConfig;
   const session = useSession();
+  const { shouldPayBill, isLoading } = useBillStatus(
+    medicationRequestBundle.request.id,
+    patientUuid
+  );
   const mostRecentMedicationDispenseStatus: MedicationDispenseStatus =
     getMostRecentMedicationDispenseStatus(medicationRequestBundle.dispenses);
   const medicationRequestStatus = computeMedicationRequestStatus(
@@ -64,6 +69,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
     <div className={styles.actionBtns}>
       {dispensable ? (
         <Button
+          disabled={shouldPayBill || isLoading}
           kind="primary"
           onClick={() =>
             launchOverlay(
@@ -83,7 +89,18 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
             )
           }
         >
-          {t("dispense", "Dispense")}
+          {isLoading ? (
+            <InlineLoading
+              style={{ minHeight: "1rem" }}
+              status="active"
+              iconDescription="Loading"
+              description="Loading data..."
+            />
+          ) : shouldPayBill ? (
+            t("pendingPayment", "Pending bill")
+          ) : (
+            t("dispense", "Dispense")
+          )}
         </Button>
       ) : null}
       {pauseable ? (

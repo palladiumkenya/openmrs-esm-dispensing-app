@@ -131,7 +131,7 @@ describe("Action Buttons Component tests", () => {
         medicationRequestBundle={{ request: medicationRequest, dispenses: [] }}
       />
     );
-    expect(getByText("Dispense")).toBeInTheDocument();
+    expect(getByText("Loading data...")).toBeInTheDocument();
   });
 
   // status = active, but validity period start time years in the past
