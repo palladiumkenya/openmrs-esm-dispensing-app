@@ -122,19 +122,21 @@ const PrescriptionTabPanel: React.FC<PrescriptionTabPanelProps> = ({
                             ))}
                           </TableExpandRow>
                           <TableExpandedRow colSpan={headers.length + 1}>
-                            <PrescriptionExpanded
-                              encounterUuid={row.id}
-                              patientUuid={
-                                row.cells.find((cell) =>
-                                  cell.id.endsWith("patient")
-                                ).value.uuid
-                              }
-                              status={
-                                row.cells.find((cell) =>
-                                  cell.id.endsWith("status")
-                                ).value
-                              }
-                            />
+                            {row.isExpanded === true && (
+                              <PrescriptionExpanded
+                                encounterUuid={row.id}
+                                patientUuid={
+                                  row.cells.find((cell) =>
+                                    cell.id.endsWith("patient")
+                                  ).value.uuid
+                                }
+                                status={
+                                  row.cells.find((cell) =>
+                                    cell.id.endsWith("status")
+                                  ).value
+                                }
+                              />
+                            )}
                           </TableExpandedRow>
                         </React.Fragment>
                       ))}
